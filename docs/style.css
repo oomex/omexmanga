@@ -75,32 +75,35 @@ body {
     left: 430px;
 }
 
-.menu-slice-1 {
+#menu-slice-1 {
     width: 30px;
     height: 5px;
     background-color: green;
     margin-top: 8px;
     margin-left: 4px;
     border-radius: 4px;
-
+    transition-duration: 0.3s;
+    
 }
 
-.menu-slice-2 {
+#menu-slice-2 {
     width: 30px;
     height: 5px;
     background-color: green;
     margin-top: 4px;
     margin-left: 4px;
     border-radius: 4px;
+    transition-duration: 0.3s;
 }
 
-.menu-slice-3 {
+#menu-slice-3 {
     width: 30px;
     height: 5px;
     background-color: green;
     margin-top: 4px;
     margin-left: 4px;
     border-radius: 4px;
+    transition-duration: 0.3s;
 }
 
 #menu {
@@ -113,6 +116,10 @@ body {
     background-color: rgb(20, 20, 20);
     border-radius: 12px;
     transition-duration: 0.2s;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 
 #menu:hover {
@@ -128,6 +135,10 @@ body {
     right: 20px;
     border-radius: 50px;
     transition-duration: 0.2s;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 
 #profile:hover {
@@ -152,4 +163,31 @@ img {
 ::selection {
     color: black;
     background: greenyellow;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    cursor: all-scroll;
+}
+  
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px black;
+}
+   
+::-webkit-scrollbar-thumb {
+    background: green;
+    transition-duration: 0.5s;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: greenyellow; 
+    transition-duration: 0.5s;
+}
+
+@keyframes menu-dropdown {
+    
+}
+
+@keyframes menu-dropup /* <-- XDD */ {
+    
 }
