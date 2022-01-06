@@ -287,6 +287,20 @@ img {
     animation-duration: 0.3s;
     border-radius: 18px;
     border: 1px solid transparent;
+    cursor: default;
+}
+
+#ddm-categories .section {
+    font-family: def2;
+    cursor: default;
+    border: 1px solid transparent;
+    border-radius: 18px;
+    margin-top: 2px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    transition-duration: 0.2s;
 }
 
 @keyframes ddmCat-dropdown {

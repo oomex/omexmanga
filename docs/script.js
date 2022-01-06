@@ -51,14 +51,25 @@ function showDDMCategories() {
     ddmCat.style.animationName = "ddmCat-dropdown";
     ddmCat.style.opacity = "1";
     ddmCat.style.top = "70px";
+    if (closeDDMCATFE == false) {
+        const dropdownMenu = document.getElementById("dropdown-menu");
+        dropdownMenu.style.animationName = "menu-dropup";
+        setTimeout(function() {
+            dropdownMenu.style.display = "none";
+            dropdownMenu.style.opacity = "0";
+            dropdownMenu.style.top = "-180px";
+        }, 150);
+    }
 }
 
 function checkDDMCategories(stat) {
     if (closeDDMCAT && closeDDMCATFE) {
         hideDDMCategories();
+    } else {
+        showDDMCategories();
     }
     if (stat == "click") {
-        closeDDMCATFE == true ? closeDDMCATFE = false : closeDDMCATFE = true;
+        closeDDMCATFE = false;
         checkDDMCategories();
     }
 }
