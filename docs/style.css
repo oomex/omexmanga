@@ -203,7 +203,6 @@ img {
 
 .link {
     cursor: pointer;
-    text-decoration: underline;
     transition-duration: 0.2s;
     user-select: none;
     -ms-user-select: none;
@@ -228,8 +227,25 @@ img {
     display: none;
     transition-duration: 0.3s;
     animation-duration: 0.3s;
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 18px;
+    border-radius: 18px;
+}
+
+#dropdown-menu .section {
+    font-family: def2;
+    cursor: default;
+    border: 1px solid transparent;
+    border-radius: 18px;
+    margin-top: 2px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    transition-duration: 0.2s;
+}
+
+#dropdown-menu .section:hover {
+    background-color: rgb(43, 43, 43);
+    transition-duration: 0.2s;
 }
 
 @keyframes menu-dropdown {
@@ -239,14 +255,55 @@ img {
     }
 
     to {
-        top: 60px;
+        top: 70px;
         opacity: 1;
     }
 }
 
 @keyframes menu-dropup /* <-- XDD */ {
     from {
-        top: 60px;
+        top: 70px;
+        opacity: 1;
+    }
+
+    to {
+        top: -180;
+        opacity: 0;
+    }
+}
+
+#ddm-categories {
+    background-color: rgb(20, 20, 20);
+    width: 150px;
+    height: 180px;
+    position: absolute;
+    text-align: center;
+    position: absolute;
+    left: 192px;
+    top: -180px;
+    opacity: 0;
+    display: none;
+    transition-duration: 0.3s;
+    animation-duration: 0.3s;
+    border-radius: 18px;
+    border: 1px solid transparent;
+}
+
+@keyframes ddmCat-dropdown {
+    from {
+        top: -180;
+        opacity: 0;
+    }
+
+    to {
+        top: 70px;
+        opacity: 1;
+    }
+}
+
+@keyframes ddmCat-dropup /* <-- XDD */ {
+    from {
+        top: 70px;
         opacity: 1;
     }
 

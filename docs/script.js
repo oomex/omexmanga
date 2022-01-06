@@ -5,7 +5,7 @@ document.getElementById("menu").onclick = function() {
         dropdownMenu.style.display = "block";
         dropdownMenu.style.animationName = "menu-dropdown";
         dropdownMenu.style.opacity = "1";
-        dropdownMenu.style.top = "60px";
+        dropdownMenu.style.top = "70px";
         document.getElementById("menu-slice-1").style.transform = "rotate(120deg)";
         document.getElementById("menu-slice-2").style.transform = "rotate(-120deg)";
         document.getElementById("menu-slice-3").style.transform = "rotate(120deg)";
@@ -40,4 +40,35 @@ function easterEgg(eg) {
         default:
             break;
     }
+}
+
+let closeDDMCAT = true;
+let closeDDMCATFE = true;
+
+function showDDMCategories() {
+    const ddmCat = document.getElementById("ddm-categories");
+    ddmCat.style.display = "block";
+    ddmCat.style.animationName = "ddmCat-dropdown";
+    ddmCat.style.opacity = "1";
+    ddmCat.style.top = "70px";
+}
+
+function checkDDMCategories(stat) {
+    if (closeDDMCAT && closeDDMCATFE) {
+        hideDDMCategories();
+    }
+    if (stat == "click") {
+        closeDDMCATFE == true ? closeDDMCATFE = false : closeDDMCATFE = true;
+        checkDDMCategories();
+    }
+}
+
+function hideDDMCategories() {
+    const ddmCat = document.getElementById("ddm-categories");
+    ddmCat.style.animationName = "menu-dropup";
+    setTimeout(function() {
+        ddmCat.style.display = "none";
+        ddmCat.style.opacity = "0";
+        ddmCat.style.top = "-180px";
+    }, 150);
 }
