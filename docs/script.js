@@ -41,7 +41,7 @@ function easterEgg(eg) {
             break;
     }
 }
-
+/* 
 let closeDDMCAT = true;
 let closeDDMCATFE = true;
 
@@ -59,6 +59,26 @@ function showDDMCategories() {
             dropdownMenu.style.opacity = "0";
             dropdownMenu.style.top = "-180px";
         }, 150);
+        document.getElementById("menu-slice-1").style.transform = "rotate(0deg)";
+        document.getElementById("menu-slice-2").style.transform = "rotate(0deg)";
+        document.getElementById("menu-slice-3").style.transform = "rotate(0deg)";
+        closeDDMCAT = true;
+    }
+    let doit = false;
+    console.log(doit);
+    document.getElementById("ddm-categories").onmouseout = function() {
+        doit = true;
+        console.log(doit);
+    }
+    document.getElementById("ddm-categories").onmouseover = function() {
+        doit = false;
+        console.log(doit);
+    }
+    document.getElementById("bg").onclick = function() {
+        console.log(doit);
+        if (doit) {
+            hideDDMCategories();
+        }
     }
 }
 
@@ -82,4 +102,15 @@ function hideDDMCategories() {
         ddmCat.style.opacity = "0";
         ddmCat.style.top = "-180px";
     }, 150);
+} */
+
+let lastDDMIH;
+
+function closeCategories() {
+    document.getElementById("dropdown-menu").innerHTML = lastDDMIH;
+}
+
+function openCategories() {
+    lastDDMIH = document.getElementById("dropdown-menu").innerHTML;
+    document.getElementById("dropdown-menu").innerHTML = '<div class="section" onclick="closeCategories()">< Back</div>' + document.getElementById("ddm-categories").innerHTML;
 }

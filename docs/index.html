@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="src/icons/omex-logo-grey-green.png" type="image/x-icon">
 </head>
-<body>
+<body id="bg">
     <div class="div1"></div>
     <div id="navbar-top">
         <div id="info-cat"></div>
@@ -18,7 +18,7 @@
             <div id="menu-slice-3"></div>
         </div>
         <div id="dropdown-menu">
-            <div class="section" onmouseover="showDDMCategories()" onmouseout="checkDDMCategories()" onclick="checkDDMCategories('click')" id="ddm">Categories ></div>
+            <div class="section" onclick="openCategories()" id="ddm">Categories ></div>
             <div class="section">Settings</div>
         </div>
         <div id="ddm-categories">
