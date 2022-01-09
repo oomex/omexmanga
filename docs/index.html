@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omex</title>
+    <title> </title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="src/icons/omex-logo-grey-green.png" type="image/x-icon">
 </head>
@@ -31,19 +31,31 @@
             <div class="section">Comedy</div>
             <div class="section">Akció</div>
         </div>
-        <img src="src/icons/omex-logo-grey-green.png" class="logo" alt="OMEX">
+        <img src="src/icons/omex-logo-grey-green.png" class="logo" alt="OMEX" onclick="window.location.href = 'index.html';">
         <input type="text" placeholder="Keress rá bármire...">
         <img class="icon-src" src="src/icons/search.png">
         <img src="src/icons/def-avatar.png" alt="Profile" id="profile" onmousewheel="easterEgg('0')">
     </div><br><br><br><br>
-    <table id="comics">
-        <td class="comic" id="testC1"></td>
-        <td class="comic" id="testC2"></td>
-        <td class="comic" id="testC3"></td>
-        <td class="comic" id="testC4"></td>
-        <td class="comic" id="testC5"></td>
-        <td class="comic" id="testC6"></td>
-    </table>
+    <div id="comics">
+        <h1>Neked ajánljuk:</h1><br><br>
+        <div id="comics-foryou">
+            <div class="comic" id="testC1"></div>
+            <div class="comic" id="testC2"></div>
+            <div class="comic" id="testC3"></div>
+            <div class="comic" id="testC4"></div>
+            <div class="comic" id="testC5"></div>
+            <div class="comic" id="testC6"></div>
+        </div><br><br><br>
+        <h1>Sci-fi:</h1><br><br>
+        <div id="comics-scifi">
+            <div class="comic" id="testC7"></div>
+            <div class="comic" id="testC8"></div>
+            <div class="comic" id="testC9"></div>
+            <div class="comic" id="testC10"></div>
+            <div class="comic" id="testC11"></div>
+            <div class="comic" id="testC12"></div>
+        </div>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>

@@ -114,3 +114,19 @@ function openCategories() {
     lastDDMIH = document.getElementById("dropdown-menu").innerHTML;
     document.getElementById("dropdown-menu").innerHTML = '<div class="section" onclick="closeCategories()">< Vissza</div>' + document.getElementById("ddm-categories").innerHTML;
 }
+
+let titles = ["Omex", "Manga", "OmexManga"];
+/* let titles = ["Omex", "Omex + ", "Omex + Manga", "Omex + Manga = ", "Omex + Manga = OmexManga", "Omex + Manga = ", "Omex + Manga", "Omex + "]; */
+/* let titles = ["Omex", "Ome", "Om", "O", "Om", "Ome", "Omex"]; */
+let currentTitle = 0;
+function changeTitle() {
+    document.title = titles[currentTitle];
+    currentTitle += 1;
+    if (currentTitle > titles.length - 1) {
+        currentTitle = 0;
+    }
+    setTimeout(function() {
+        changeTitle();
+    }, 1000);
+}
+changeTitle();

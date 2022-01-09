@@ -45,6 +45,7 @@ body {
     left: 200px;
     width: 190px;
     height: 110px;
+    cursor: pointer;
 }
 
 #navbar-top h1 {
@@ -334,4 +335,21 @@ img {
         top: -180;
         opacity: 0;
     }
+}
+
+#comics .comic {
+    width: 200px;
+    height: 300px;
+    float: left;
+    margin-left: 50px;
+    margin-top: 20px;
+    background-color: blue;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+#comics .comic:hover {
+    width: 250px;
+    height: 350px;
+    transition-duration: 0.2s;
 }
