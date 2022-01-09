@@ -112,5 +112,5 @@ function closeCategories() {
 
 function openCategories() {
     lastDDMIH = document.getElementById("dropdown-menu").innerHTML;
-    document.getElementById("dropdown-menu").innerHTML = '<div class="section" onclick="closeCategories()">< Back</div>' + document.getElementById("ddm-categories").innerHTML;
+    document.getElementById("dropdown-menu").innerHTML = '<div class="section" onclick="closeCategories()">< Vissza</div>' + document.getElementById("ddm-categories").innerHTML;
 }
