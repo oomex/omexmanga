@@ -307,8 +307,8 @@ img {
 }
 
 #comics .comic {
-    width: 70px;
-    height: 100px;
+    width: 90px;
+    height: 130px;
     float: left;
     margin-left: 10px;
     margin-top: 24px;
@@ -325,12 +325,12 @@ img {
 
 #comics .comic span {
     font-size: 10px;
-    height: 220px;
-    line-height: 220px;
+    height: 275px;
+    line-height: 275px;
 }
 
 .scifi-comics {
-    margin-top: 250px;
+    margin-top: 320px;
 }
 
 .section input {
@@ -357,4 +357,27 @@ img {
     background-repeat: no-repeat;
     background-position-y: center;
     background-position-x: right;
+}
+
+#navbar-bottom {
+    display: block;/* 
+    background-color: blue; */
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+}
+
+#home {
+    background-image: url("src/icons/home.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 5px;
+    left: 50%;
+    margin-left: -20px;
 }
