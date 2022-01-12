@@ -400,3 +400,7 @@ img {
 #navbar-bottom {
     display: none;
 }
+
+.top-search {
+    display: none;
+}

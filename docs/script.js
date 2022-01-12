@@ -1,28 +1,28 @@
-let menu = false;
-document.getElementById("menu").onclick = function() {
-    const dropdownMenu = document.getElementById("dropdown-menu");
+/* let menu = false;
+document.getElementById("categories").onclick = function() {
+    const dropdownMenu = document.getElementById("dropdown-categories");
     if (menu == false) {
         dropdownMenu.style.display = "block";
-        dropdownMenu.style.animationName = "menu-dropdown";
+        dropdownMenu.style.animationName = "categories-dropdown";
         dropdownMenu.style.opacity = "1";
         dropdownMenu.style.top = "70px";
-        document.getElementById("menu-slice-1").style.transform = "rotate(120deg)";
-        document.getElementById("menu-slice-2").style.transform = "rotate(-120deg)";
-        document.getElementById("menu-slice-3").style.transform = "rotate(120deg)";
+        document.getElementById("categories-slice-1").style.transform = "rotate(120deg)";
+        document.getElementById("categories-slice-2").style.transform = "rotate(-120deg)";
+        document.getElementById("categories-slice-3").style.transform = "rotate(120deg)";
         menu = true;
     } else {
-        dropdownMenu.style.animationName = "menu-dropup";
+        dropdownMenu.style.animationName = "categories-dropup";
         setTimeout(function() {
             dropdownMenu.style.display = "none";
             dropdownMenu.style.opacity = "0";
             dropdownMenu.style.top = "-180px";
         }, 150);
-        document.getElementById("menu-slice-1").style.transform = "rotate(0deg)";
-        document.getElementById("menu-slice-2").style.transform = "rotate(0deg)";
-        document.getElementById("menu-slice-3").style.transform = "rotate(0deg)";
+        document.getElementById("categories-slice-1").style.transform = "rotate(0deg)";
+        document.getElementById("categories-slice-2").style.transform = "rotate(0deg)";
+        document.getElementById("categories-slice-3").style.transform = "rotate(0deg)";
         menu = false;
     }
-}
+} */
 
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
     document.getElementById("style-link").innerHTML = `<link rel="stylesheet" href="style-mob.css">`;
@@ -110,16 +110,16 @@ function hideDDMCategories() {
     }, 150);
 } */
 
-let lastDDMIH;
+/* let lastDDMIH;
 
 function closeCategories() {
-    document.getElementById("dropdown-menu").innerHTML = lastDDMIH;
+    document.getElementById("dropdown-categories").innerHTML = lastDDMIH;
 }
 
 function openCategories() {
-    lastDDMIH = document.getElementById("dropdown-menu").innerHTML;
-    document.getElementById("dropdown-menu").innerHTML = '<div class="section" onclick="closeCategories()">< Vissza</div>' + document.getElementById("ddm-categories").innerHTML;
-}
+    lastDDMIH = document.getElementById("dropdown-categories").innerHTML;
+    document.getElementById("dropdown-categories").innerHTML = '<div class="section" onclick="closeCategories()">< Vissza</div>' + document.getElementById("ddm-categories").innerHTML;
+} */
 
 let titles = ["Omex", "Manga", "OmexManga"];
 /* let titles = ["Omex", "Omex + ", "Omex + Manga", "Omex + Manga = ", "Omex + Manga = OmexManga", "Omex + Manga = ", "Omex + Manga", "Omex + "]; */
