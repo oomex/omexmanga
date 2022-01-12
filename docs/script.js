@@ -1,3 +1,11 @@
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    alert("mob");
+    document.getElementById("style").innerHTML = `<link rel="stylesheet" href="style-pc.css">`;
+} else {
+    alert("mob");
+    document.getElementById("style").innerHTML = `<link rel="stylesheet" href="style-mob.css">`;
+}
+
 let menu = false;
 document.getElementById("menu").onclick = function() {
     const dropdownMenu = document.getElementById("dropdown-menu");

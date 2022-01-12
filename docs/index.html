@@ -5,21 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> </title>
-    <link rel="stylesheet" href="style.css">
+    <div id="style"></div>
     <link rel="shortcut icon" href="src/icons/omex-logo-grey-green.png" type="image/x-icon">
 </head>
 <body id="bg">
     <div class="div1"></div>
     <div id="navbar-top">
         <div id="info-cat"></div>
-        <div id="menu">
+        <div id="menu" title="Menü">
             <div id="menu-slice-1"></div>
             <div id="menu-slice-2"></div>
             <div id="menu-slice-3"></div>
         </div>
         <div id="dropdown-menu">
-            <div class="section" onclick="openCategories()" id="ddm">Kategóriák ></div>
-            <div class="section">Beállítások</div>
+            <div class="section"><input type="search" placeholder="Gyorskeresés..." title="Gyorskeresés"></div>
+            <div class="section" onclick="openCategories()" id="ddm" title="Mangák kategóriákra osztva">Kategóriák ></div>
+            <div class="section" title="Mindennek a beállítása">Beállítások</div>
+            <div class="section" title="A profilod">Profil</div>
         </div>
         <div id="ddm-categories">
             <div class="section">Sci-fi</div>
@@ -30,15 +32,16 @@
             <div class="section">Thriller</div>
             <div class="section">Comedy</div>
             <div class="section">Akció</div>
+            <div class="section">Slice of life</div>
         </div>
-        <img src="src/icons/omex-logo-grey-green.png" class="logo" alt="OMEX" onclick="window.location.href = 'index.html';">
-        <input type="text" placeholder="Keress rá bármire...">
+        <img src="src/icons/omex-logo-grey-green.png" class="logo" alt="OMEX" onclick="window.location.href = 'index.html';" title="OMEX">
+        <input type="text" placeholder="Keress rá bármire..." title="Keresőmező" class="topnav-search">
         <img class="icon-src" src="src/icons/search.png">
-        <img src="src/icons/def-avatar.png" alt="Profile" id="profile" onmousewheel="easterEgg('0')">
+        <img src="src/icons/def-avatar.png" alt="Profile" id="profile" onmousewheel="easterEgg('0')" title="Profil">
     </div><br><br><br><br>
     <div id="comics">
-        <h1>Neked ajánljuk:</h1><br><br>
         <div id="comics-foryou">
+            <h1>Neked ajánljuk:</h1><br><br>
             <div class="comic" id="testC1"></div>
             <div class="comic" id="testC2"></div>
             <div class="comic" id="testC3"></div>
@@ -46,8 +49,8 @@
             <div class="comic" id="testC5"></div>
             <div class="comic" id="testC6"></div>
         </div><br><br><br>
-        <h1>Sci-fi:</h1><br><br>
         <div id="comics-scifi">
+            <h1>Sci-fi:</h1><br><br>
             <div class="comic" id="testC7"></div>
             <div class="comic" id="testC8"></div>
             <div class="comic" id="testC9"></div>
