@@ -86,7 +86,7 @@ input {
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 23px;
+    top: 20px;
     left: 430px;
 }
 
@@ -354,12 +354,15 @@ img {
     transition-duration: 0.2s;
     border-radius: 12px;
     text-align: center;
+    opacity: 1;
+    background-image: url("https://upload.wikimedia.org/wikipedia/hu/thumb/1/1f/Naruto_bor%C3%ADt%C3%B31.jpg/250px-Naruto_bor%C3%ADt%C3%B31.jpg");
 }
 
 #comics .comic:hover {
     width: 200px;
     height: 300px;
     transition-duration: 0.2s;
+    opacity: 0.6;
 }
 
 #comics .comic span {
