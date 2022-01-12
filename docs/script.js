@@ -1,9 +1,9 @@
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     alert("mob");
-    document.getElementById("style").innerHTML = `<link rel="stylesheet" href="style-pc.css">`;
-} else {
-    alert("mob");
     document.getElementById("style").innerHTML = `<link rel="stylesheet" href="style-mob.css">`;
+} else {
+    alert("pc");
+    document.getElementById("style").innerHTML = `<link rel="stylesheet" href="style-pc.css">`;
 }
 
 let menu = false;
