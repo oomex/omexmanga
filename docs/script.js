@@ -1,4 +1,4 @@
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
     alert("mob");
     document.getElementById("style-link").innerHTML = `<link rel="stylesheet" href="style-mob.css">`;
 } else {
