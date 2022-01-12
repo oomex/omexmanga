@@ -1,11 +1,3 @@
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    alert("mob");
-    document.getElementById("style-link").innerHTML = `<link rel="stylesheet" href="style-mob.css">`;
-} else {
-    alert("pc");
-    document.getElementById("style-link").innerHTML = `<link rel="stylesheet" href="style-pc.css">`;
-}
-
 let menu = false;
 document.getElementById("menu").onclick = function() {
     const dropdownMenu = document.getElementById("dropdown-menu");
@@ -30,6 +22,14 @@ document.getElementById("menu").onclick = function() {
         document.getElementById("menu-slice-3").style.transform = "rotate(0deg)";
         menu = false;
     }
+}
+
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    alert("mob");
+    document.getElementById("style-link").innerHTML = `<link rel="stylesheet" href="style-mob.css">`;
+} else {
+    alert("pc");
+    document.getElementById("style-link").innerHTML = `<link rel="stylesheet" href="style-pc.css">`;
 }
 
 let egs = [false]
