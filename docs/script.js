@@ -25,10 +25,8 @@ document.getElementById("menu").onclick = function() {
 }
 
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    alert("mob");
     document.getElementById("style-link").innerHTML = `<link rel="stylesheet" href="style-mob.css">`;
 } else {
-    alert("pc");
     document.getElementById("style-link").innerHTML = `<link rel="stylesheet" href="style-pc.css">`;
 }
 
@@ -138,3 +136,9 @@ function changeTitle() {
     }, 1000);
 }
 changeTitle();
+
+window.onkeydown = function(evt) {
+    if (evt.code == "F4" || evt.code == "NumpadEnter") {
+        // Fast search bar in the middle of the screen
+    }
+}

@@ -352,6 +352,7 @@ img {
     background-color: blue;
     cursor: pointer;
     transition-duration: 0.2s;
+    position: relative;
 }
 
 #comics .comic:hover {
