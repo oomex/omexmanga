@@ -592,3 +592,13 @@ option {
     left: 10px;
     color: red;
 }
+
+button {
+    background-color: transparent;
+    border: 1px solid green;
+    color: green;
+    border-radius: 20px;
+    transition-duration: 0.2s;
+    font-size: 18px;
+    font-family: def;
+}

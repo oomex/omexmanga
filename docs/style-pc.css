@@ -421,3 +421,65 @@ img {
 #categ-menu {
     display: none;
 }
+
+#fastSearch {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(20, 20, 20);
+    opacity: 0.96;
+    width: 500px;
+    height: 200px;
+    border-radius: 20px;
+    text-align: center;
+    display: none;
+}
+
+#fastSearch input {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    width: 400px;
+    font-size: 20pt;
+    padding-left: 9px;
+    background-image: url("src/icons/search.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position-x: 7px;
+    background-position-y: center;
+    padding-left: 30px;
+}
+
+#fastSearch .X {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    color: red;
+    cursor: pointer;
+    font-size: 30px;
+    transition-duration: 0.2s;
+}
+
+#fastSearch .X:hover {
+    color: rgb(160, 0, 0);
+    transition-duration: 0.2s;
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid green;
+    color: green;
+    border-radius: 20px;
+    transition-duration: 0.2s;
+    font-size: 24px;
+    font-family: def;
+}
+
+button:hover {
+    border: 1px solid rgb(0, 77, 0);
+    color: rgb(0, 77, 0);
+    transition-duration: 0.2s;
+}
