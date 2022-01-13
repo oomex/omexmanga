@@ -377,17 +377,21 @@ img {
 }
 
 #navbar-bottom {
-    display: block;/* 
-    background-color: blue; */
-    height: 60px;
+    display: block;
+    background-color: rgb(20, 20, 20);
+    height: 70px;
     width: 100%;
     position: fixed;
     bottom: 0px;
     left: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    opacity: 0.9;
+    animation-duration: 0.5s;
 }
 
 #home {
-    background-image: url("src/icons/home.png");
+    background-image: url("src/icons/home-blue.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
@@ -397,6 +401,8 @@ img {
     bottom: 5px;
     left: 50%;
     margin-left: -20px;
+    opacity: 1;
+    animation-duration: 0.55s;
 }
 
 #categ {
@@ -406,27 +412,87 @@ img {
     bottom: 5px;
     left: 25%;
     margin-left: -20px;
+    opacity: 1;
+    animation-duration: 0.55s;
 }
 
 #categ .slice-1 {
-    background-color: greenyellow;
+    background-color: green;
     width: 30px;
     height: 7px;
     border-radius: 20px;
+    margin-top: 4px;
 }
 
 #categ .slice-2 {
-    background-color: greenyellow;
+    background-color: green;
     width: 30px;
     height: 7px;
     border-radius: 20px;
+    margin-top: 4px;
 }
 
 #categ .slice-3 {
-    background-color: greenyellow;
+    background-color: green;
     width: 30px;
     height: 7px;
     border-radius: 20px;
+    margin-top: 4px;
+}
+
+#hideNav {
+    background-image: url("src/icons/arrow.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 5px;
+    right: 25%;
+    margin-right: -20px;
+    transform: rotate(90deg);
+    transition-duration: 0.5s;
+}
+
+@keyframes fade-down {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bottomNav-dropdown {
+    from {
+        bottom: 0px;
+    }
+
+    to {
+        bottom: -35px;
+    }
+}
+
+@keyframes bottomNav-dropup {
+    from {
+        bottom: -35px;
+    }
+    
+    to {
+        bottom: 0px;
+    }
 }
 
 datalist {
