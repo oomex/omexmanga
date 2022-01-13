@@ -175,12 +175,27 @@ document.getElementById("hideNav").onclick = function() {
             bottomNav.style.animationName = "bottomNav-dropup";
             hideNav.style.transform = "rotate(90deg)";
             hideNav.style.bottom = "5px";
-            setTimeout(function() {
-                bottomNav.style.bottom = "0px";
-                document.getElementById("home").style.display = "block";
-                document.getElementById("categ").style.display = "block";
-            }, 400);
+            bottomNav.style.bottom = "0px";
+            document.getElementById("home").style.display = "block";
+            document.getElementById("categ").style.display = "block";
             navHidden = false;
         }
     }
 }
+
+let categHidden = false;
+document.getElementById("categ").onclick = function() {
+    const categ = document.getElementById("categ");
+    if (device == "phone") {
+        if (categHidden == false) {
+            document.getElementById("categ-slice-1").
+            setTimeout(function() {
+            }, 400);
+            categHidden = true;
+        } else {
+           
+            categHidden = false;
+        }
+    }
+}
+
