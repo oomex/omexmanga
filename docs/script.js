@@ -183,17 +183,41 @@ document.getElementById("hideNav").onclick = function() {
     }
 }
 
+let lastCategMenu;
+function openCategCategMenu() {
+    lastCategMenu = document.getElementById("categ-menu").innerHTML;
+    document.getElementById("categ-menu").innerHTML = `<div class="section" onclick="closeCategCategMenu()">< Vissza</div>` + document.getElementById("categ-categories").innerHTML;
+    document.getElementById("categ-menu").style.height = "350px";
+}
+
+function closeCategCategMenu() {
+    document.getElementById("categ-menu").innerHTML = lastCategMenu;
+    document.getElementById("categ-menu").style.height = "150px";
+}
+
 let categHidden = false;
 document.getElementById("categ").onclick = function() {
     const categ = document.getElementById("categ");
     if (device == "phone") {
         if (categHidden == false) {
-            document.getElementById("categ-slice-1").
+            document.getElementById("categ-menu").style.display = "block";
+            document.getElementById("categ-menu").style.animationName = "fade-up";
+            document.getElementById("categ-slice-1").style.transform = "rotate(120deg)";
+            document.getElementById("categ-slice-2").style.transform = "rotate(-120deg)";
+            document.getElementById("categ-slice-3").style.transform = "rotate(120deg)";
             setTimeout(function() {
-            }, 400);
+                document.getElementById("categ-menu").style.opacity = "1";
+            }, 100);
             categHidden = true;
         } else {
-           
+            document.getElementById("categ-menu").style.animationName = "fade-down";
+            document.getElementById("categ-slice-1").style.transform = "rotate(0deg)";
+            document.getElementById("categ-slice-2").style.transform = "rotate(0deg)";
+            document.getElementById("categ-slice-3").style.transform = "rotate(0deg)";
+            setTimeout(function() {
+                document.getElementById("categ-menu").style.opacity = "0";
+                document.getElementById("categ-menu").style.display = "none";
+            }, 100);
             categHidden = false;
         }
     }

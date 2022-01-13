@@ -412,3 +412,11 @@ img {
 #home {
     display: none;
 }
+
+#hideNav {
+    display: none;
+}
+
+#categ-menu {
+    display: none;
+}

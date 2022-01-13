@@ -422,6 +422,7 @@ img {
     height: 7px;
     border-radius: 20px;
     margin-top: 4px;
+    transition-duration: 0.2s;
 }
 
 #categ .slice-2 {
@@ -430,6 +431,7 @@ img {
     height: 7px;
     border-radius: 20px;
     margin-top: 4px;
+    transition-duration: 0.2s;
 }
 
 #categ .slice-3 {
@@ -438,6 +440,7 @@ img {
     height: 7px;
     border-radius: 20px;
     margin-top: 4px;
+    transition-duration: 0.2s;
 }
 
 #hideNav {
@@ -493,6 +496,39 @@ img {
     to {
         bottom: 0px;
     }
+}
+
+#categ-menu {
+    position: fixed;
+    left: 7px;
+    bottom: 80px;
+    background-color: rgb(20, 20, 20);
+    border-radius: 20px;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    display: none;
+    opacity: 0;
+    animation-duration: 0.2s;
+}
+
+#categ-menu .section {
+    font-family: def2;
+    cursor: default;
+    border: 1px solid transparent;
+    border-bottom: 1px solid green;
+    border-radius: 18px;
+    margin-top: 2px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    transition-duration: 0.2s;
+}
+
+#categ-menu .section:hover {
+    background-color: rgb(43, 43, 43);
+    transition-duration: 0.2s;
 }
 
 datalist {
