@@ -1,5 +1,6 @@
 let menu = false;
 let device;
+let gotoTop = true;
 
 /* setTimeout(function() {
     if (device == "pc") {
@@ -146,9 +147,17 @@ function changeTitle() {
 }
 changeTitle();
 
+let fsDisp = false;
 window.onkeydown = function(evt) {
     if (evt.code == "F4" || evt.code == "NumpadEnter") {
         // Fast search bar in the middle of the screen
+        if (fsDisp == false) {
+            document.getElementById("fastSearch").style.display = "block";
+            fsDisp = true;
+        } else {
+            document.getElementById("fastSearch").style.display = "none";
+            fsDisp = false;
+        }
     }
 }
 

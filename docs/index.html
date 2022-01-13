@@ -9,6 +9,7 @@
 </head>
 <div id="style-link"></div>
 <body id="bg">
+    <div id="top"></div>
     <div class="div1"></div><br><br><br><br><br>
     <input type="search" class="top-search" placeholder="Keressen itt bármire..." list="search-comics">
     <datalist id="search-comics">
@@ -50,7 +51,7 @@
         <div id="dropdown-menu">
             <div class="section"><input type="search" placeholder="Gyorskeresés..." title="Gyorskeresés"></div>
             <div class="section" onclick="openCategories()" id="ddm" title="Mangák kategóriákra osztva">Kategóriák ></div>
-            <div class="section" title="Mindennek a beállítása">Beállítások</div>
+            <div class="section" title="Mindennek a beállítása" onclick="settings()">Beállítások</div>
             <div class="section" title="A profilod">Profil</div>
         </div>
         <div id="ddm-categories">
@@ -70,12 +71,12 @@
         <img src="src/icons/def-avatar.png" alt="Profile" id="profile" onmousewheel="easterEgg('0')" title="Profil">
     </div><br><br><br><br>
     <div id="navbar-bottom">
-        <div id="home"></div>
+        <div id="home" onclick="setTimeout(function(){ if (gotoTop == false) { window.location.href = 'index.html' } else { window.scroll({ top: 0, left: 0, behavior: 'smooth' }); } }, 100)"></div>
         <div id="categ-menu">
             <div class="section"><input type="search" placeholder="Gyorskeresés..." title="Gyorskeresés"></div>
             <div class="section" onclick="openCategCategMenu()">Kategóriák ></div>
             <div class="section">Profil</div>
-            <div class="section">Beállítások</div>
+            <div class="section" onclick="settings()">Beállítások</div>
         </div>
         <div id="categ-categories" style="display: none;">
             <div class="section">Sci-fi</div>
@@ -93,6 +94,11 @@
             <div class="slice-2" id="categ-slice-2"></div>
             <div class="slice-3" id="categ-slice-3"></div>
         </div>
+    </div>
+    <div id="fastSearch"><br>
+        <div class="X" onclick="document.getElementById('fastSearch').style.display = 'none'; fsDisp = false;">X</div>
+        <span>Very secret search bar</span><br>
+        <input type="search" id="search-1">
     </div>
     <div id="hideNav"></div>
 </body>
