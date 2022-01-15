@@ -483,3 +483,7 @@ button:hover {
     color: rgb(0, 77, 0);
     transition-duration: 0.2s;
 }
+
+.center {
+    text-align: center;
+}

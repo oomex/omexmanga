@@ -602,3 +602,7 @@ button {
     font-size: 18px;
     font-family: def;
 }
+
+.center {
+    text-align: center;
+}

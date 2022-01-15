@@ -1,12 +1,32 @@
+// Variables
 let menu = false;
 let device;
 let gotoTop = true;
+const savedData = localStorage.getItem("omex-data");
 
-/* setTimeout(function() {
-    if (device == "pc") {
+let data = {
+    basic: {
+        name: "",
+    }
+}
+
+/* // Check DATA
+if (savedData != null) {
+    data = JSON.parse(savedData);
+} else {
+    document.getElementById("comics").innerHTML = `
+        <h1>Hoppá úgy láttuk, hogy nincsen még adata elmentve erre az eszközre. Választhat a lehetőségek közül:</h1><br><br>
+        <div class="center">
+            <button id="createProfile">Új fiók létrehozása</button><br><br>
+            <button id="importProfile">Fiók adat importálása</button>
+        </div>
+    `;
+
+    document.getElementById("importProfile").onclick = function() {
         
     }
-}, 1500); */
+} */
+
 
 function checkMenu() {
     const dropdownMenu = document.getElementById("dropdown-menu");
@@ -208,43 +228,56 @@ function closeCategCategMenu() {
     document.getElementById("categ-menu").style.height = "150px";
 }
 
+function checkCategMenu() {
+    const categ = document.getElementById("categ");
+    if (categHidden == false) {
+        document.getElementById("categ-menu").style.display = "block";
+        document.getElementById("categ-menu").style.animationName = "fade-up";
+        document.getElementById("categ-slice-1").style.transform = "rotate(120deg)";
+        document.getElementById("categ-slice-2").style.transform = "rotate(-120deg)";
+        document.getElementById("categ-slice-3").style.transform = "rotate(120deg)";
+        setTimeout(function() {
+            document.getElementById("categ-menu").style.opacity = "1";
+        }, 100);
+        categHidden = true;
+    } else {
+        document.getElementById("categ-menu").style.animationName = "fade-down";
+        document.getElementById("categ-slice-1").style.transform = "rotate(0deg)";
+        document.getElementById("categ-slice-2").style.transform = "rotate(0deg)";
+        document.getElementById("categ-slice-3").style.transform = "rotate(0deg)";
+        setTimeout(function() {
+            document.getElementById("categ-menu").style.opacity = "0";
+            document.getElementById("categ-menu").style.display = "none";
+        }, 100);
+        categHidden = false;
+    }
+}
+
 let categHidden = false;
 document.getElementById("categ").onclick = function() {
-    const categ = document.getElementById("categ");
     if (device == "phone") {
-        if (categHidden == false) {
-            document.getElementById("categ-menu").style.display = "block";
-            document.getElementById("categ-menu").style.animationName = "fade-up";
-            document.getElementById("categ-slice-1").style.transform = "rotate(120deg)";
-            document.getElementById("categ-slice-2").style.transform = "rotate(-120deg)";
-            document.getElementById("categ-slice-3").style.transform = "rotate(120deg)";
-            setTimeout(function() {
-                document.getElementById("categ-menu").style.opacity = "1";
-            }, 100);
-            categHidden = true;
-        } else {
-            document.getElementById("categ-menu").style.animationName = "fade-down";
-            document.getElementById("categ-slice-1").style.transform = "rotate(0deg)";
-            document.getElementById("categ-slice-2").style.transform = "rotate(0deg)";
-            document.getElementById("categ-slice-3").style.transform = "rotate(0deg)";
-            setTimeout(function() {
-                document.getElementById("categ-menu").style.opacity = "0";
-                document.getElementById("categ-menu").style.display = "none";
-            }, 100);
-            categHidden = false;
-        }
+        checkCategMenu();
     }
 }
 
 let lastBG;
 function settings() {
     lastBG = document.getElementById("bg").innerHTML;
-    menu = true;
-    if () {
+    if (device == "pc") {
+        menu = true;
+        checkMenu();
+    } else {
+        categHidden = true;
+        checkCategMenu();
+        document.getElementById("comics").innerHTML = `
+            <button onclick="window.location.href = 'index.html';">Back</button><br><br>
+            <h1>Home gomb</h1><br>
+            <span>Késleltetés </span><input type="number" id="mobHomeBtnTimeout"><button id="mobHomeBtnTimeout-btn">Kész</button>
+        `;
         
+        document.getElementById("mobHomeBtnTimeout-btn").onclick = function() {
+            
+        }
     }
-    checkMenu();
-    document.getElementById("comics").innerHTML = `
-        <button onclick="window.location.href = 'index.html';">Back</button>
-    `;
+
 }
