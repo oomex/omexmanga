@@ -501,3 +501,54 @@ input {
     background-size: 100%;
     background-repeat: no-repeat;
 }
+
+#sidenav {
+    background-color: rgb(20, 20, 20);
+    width: 200px;
+    height: 70%;
+    position: absolute;
+    top: 70px;
+    left: 2px;
+    text-align: center;
+    font-family: def2;
+    display: table;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#sidenav .section {
+    cursor: default;
+    border: 1px solid transparent;
+    border-radius: 18px;
+    margin-top: 2px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    transition-duration: 0.2s;
+    text-decoration: underline;
+}
+
+#sidenav .section:hover {
+    background-color: rgb(43, 43, 43);
+    transition-duration: 0.2s;
+}
+
+#sidenav .desection {
+    cursor: default;
+    border: 1px solid transparent;
+    border-radius: 18px;
+    margin-top: 2px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    transition-duration: 0.2s;
+    font-style: italic;
+    font-size: 14px;
+}
+
+#sidenav .desection:hover {
+    background-color: rgb(43, 43, 43);
+    transition-duration: 0.2s;
+}

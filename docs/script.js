@@ -396,6 +396,28 @@ function settings() {
     if (device == "pc") {
         menu = true;
         checkMenu();
+        document.getElementById("comics").innerHTML = `
+            <div id="sidenav">
+                <div class="section">Főoldal</div><br>
+
+                <div class="section">Profil</div>
+                <div class="desection">alprofil</div><br>
+
+                <div class="section">Fizetések</div>
+                <div class="desection">Tranzakciók</div>
+                <div class="desection">Rangok</div>
+                <div class="desection">Tagságok</div>
+                <div class="desection">Előfizetések</div>
+                <div class="desection">Bolt</div><br>
+
+                <div class="section">Nézet</div>
+                <div class="desection">Oldal</div><br>
+
+                <div class="section">Egyéb</div>
+                <div class="desection">Speciális</div>
+                <div class="desection hidden">Developer</div>
+            </div>
+        `;
     } else {
         categHidden = true;
         checkCategMenu();
