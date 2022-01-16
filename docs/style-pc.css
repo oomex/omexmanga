@@ -487,3 +487,17 @@ button:hover {
 .center {
     text-align: center;
 }
+
+input {
+    border-radius: 20px;
+    padding-left: 8px;
+    font-size: 14px;
+    cursor: text;
+}
+
+.profPic {
+    background-image: url("src/icons/def-avatar.png");
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}

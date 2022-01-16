@@ -3,19 +3,33 @@ let menu = false;
 let device;
 let gotoTop = true;
 const savedData = localStorage.getItem("omex-data");
+const date = new Date();
 
 let data = {
     basic: {
-        name: "",
-    }
+        redirect: "red01011",
+        profile: {
+            name: "",
+            birth: {
+                year: "",
+                month: "",
+                day: "",
+            },
+            picture: "",
+        },
+    },
 }
 
-/* // Check DATA
+function ud() {
+    localStorage.setItem("omex-data", JSON.stringify(data));
+}
+
+// Check DATA
 if (savedData != null) {
     data = JSON.parse(savedData);
 } else {
     document.getElementById("comics").innerHTML = `
-        <h1>Hoppá úgy láttuk, hogy nincsen még adata elmentve erre az eszközre. Választhat a lehetőségek közül:</h1><br><br>
+        <h1>Uff... hát bocs, de erre az eszközre nincsen elmentve még adat, úgyhogy válassz:</h1><br><br>
         <div class="center">
             <button id="createProfile">Új fiók létrehozása</button><br><br>
             <button id="importProfile">Fiók adat importálása</button>
@@ -23,10 +37,109 @@ if (savedData != null) {
     `;
 
     document.getElementById("importProfile").onclick = function() {
-        
-    }
-} */
+        document.getElementById("comics").innerHTML = `
+            <button onclick="window.location.href = 'index.html';">Vissza</button><br><br>
 
+            <span>Ide tudod feltölteni a fájlt: </span><input type="file" id="profileData"><br><br>
+
+            <span>Vagy pedig ide tudod bemásolni a kódot, amit kaptál: </span><input type="text" id="profileData2">
+        `;
+
+        const profileData = document.getElementById("profileData"); 
+        const profileData2 = document.getElementById("profileData2"); 
+        let loadedData;
+        let errorY = false;
+
+        const dataLoaded = () => {
+            try {
+                data = JSON.parse(loadedData);
+            } catch (error) {
+                if (error !== null) {
+                    errorY = true;
+                }
+            } finally {
+                if (errorY) {      
+                    document.getElementById("comics").innerHTML = `
+                        <h1>Bocs, de a profilkód, amit megadtál, nem jó. Lécci próbáld újra!</h1><br><br>
+                        <button onclick="window.location.href = 'index.html';">Újrapróbálás</button>
+                    `;
+                } else {
+                    ud();
+                }
+            }
+        }
+
+        profileData.addEventListener('change', () => {
+            let files = profileData.files;
+            if(files.length == 0) return;
+            const file = files[0];
+            let reader = new FileReader();
+            reader.onload = (e) => {
+                const file = e.target.result;
+                loadedData = file;
+            };
+            reader.onerror = (e) => alert(e.target.error.name);
+            reader.readAsText(file); 
+            dataLoaded();
+
+        });
+
+        profileData2.onchange = function() {
+            loadedData = this.value;
+            dataLoaded();
+        }
+    }
+    
+    let profDatas = {
+        name: "",
+        birth: "",
+        pic: "",
+    }
+
+    document.getElementById("createProfile").onclick = function() {
+        document.getElementById("comics").innerHTML = `
+            <button onclick="window.location.href = 'index.html';">Vissza</button><br><br>
+
+            <h1>Felhasználónév</h1><br>
+            <input type="text" id="username"><br><br>
+            <h1>Születési év</h1><br>
+            <input type="date" id="userbirth" min="1930-01-01" max="${String(date.getFullYear() - 9) + "-" + "01-01"}"><br><br>
+            <h1>Profilkép</h1><br>
+            <div class="profPic" style="width: 50px; height: 50px; border: 1px solid green;" id="profPic"></div><br><br>
+            <span>Fénykép url-jének megadása (Nem muszáj): </span><input type="url" id="userPic" style="margin-left: 4px;"><br><br><br>
+
+            <button id="saveProfDat">Mentés</button>
+        `;
+        
+        document.getElementById("userPic").onchange = function() {
+            profDatas.pic = String(this.value);
+            document.getElementById("profPic").style.backgroundImage = "url(" + profDatas.pic + ")";
+        }
+
+        
+        document.getElementById("saveProfDat").onclick = function() {
+            if (document.getElementById("username").value != "" && document.getElementById("userbirth").value != "") {
+                data.basic.profile.name = document.getElementById("username").value;
+
+                data.basic.profile.birth.year = Number(document.getElementById("userbirth").value.slice(0, 4));
+                data.basic.profile.birth.month = Number(document.getElementById("userbirth").value.slice(5, 7));
+                data.basic.profile.birth.day = Number(document.getElementById("userbirth").value.slice(8, 10));
+
+                if (document.getElementById("userPic").value != "") {
+                    data.basic.profile.picture = document.getElementById("userPic").value;
+                }
+
+                ud();
+
+                alert("Profil sikeresen létrehozva!");
+                window.location.href = "index.html";
+
+            } else {
+                alert("Lécci töltsd ki az összes mezőt!");
+            }
+        }
+    }
+}
 
 function checkMenu() {
     const dropdownMenu = document.getElementById("dropdown-menu");
@@ -61,6 +174,9 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     device = "pc";
     document.getElementById("menu").onclick = function() {
         checkMenu();
+    }
+    if (data.basic.profile.picture != "") {
+        document.getElementById("profile").src = data.basic.profile.picture;
     }
 }
 
@@ -172,6 +288,7 @@ function changeTitle() {
 changeTitle();
 
 let fsDisp = false;
+/* let dfs = false; */
 window.onkeydown = function(evt) {
     if (evt.code == "F4" || evt.code == "NumpadEnter") {
         // Fast search bar in the middle of the screen
@@ -182,6 +299,19 @@ window.onkeydown = function(evt) {
             document.getElementById("fastSearch").style.display = "none";
             fsDisp = false;
         }
+
+        /* document.getElementById("search-1").onclick = function() {
+            dfs = !dfs;
+        } */
+
+        /* window.onkeydown = function(event) {
+            if (event.code == "F4" && event.code == "NumpadEnter") {
+                document.getElementById("fastSearch").style.display = "none";
+                fsDisp = false;
+            } else if (event.key != "Backspace" && event.key != "Space" && event.key != "Shift" && event.key != "Control" && event.key != "Meta" && event.key != "AltGraph" && event.key != "ContextMenu" && event.key != "ArrowUp" && event.key != "ArrowDown" && event.key != "ArrowLeft" && event.key != "ArrowRight" && event.key != "Enter" && event.key.slice(0, 1) != "F" && dfs == false) {
+                document.getElementById("search-1").value += event.key;
+            }
+        } */
     }
 }
 
@@ -270,7 +400,7 @@ function settings() {
         categHidden = true;
         checkCategMenu();
         document.getElementById("comics").innerHTML = `
-            <button onclick="window.location.href = 'index.html';">Back</button><br><br>
+            <button onclick="window.location.href = 'index.html';">Vissza</button><br><br>
             <h1>Home gomb</h1><br>
             <span>Késleltetés </span><input type="number" id="mobHomeBtnTimeout"><button id="mobHomeBtnTimeout-btn">Kész</button>
         `;
