@@ -49,7 +49,7 @@
             <div id="menu-slice-3"></div>
         </div>
         <div id="dropdown-menu">
-            <div class="section"><input type="search" placeholder="Gyorskeresés..." title="Gyorskeresés"></div>
+            <div class="section"><input type="search" placeholder="Gyorskeresés..." title="Gyorskeresés" onchange="search(this.value, this)"></div>
             <div class="section" onclick="openCategories()" id="ddm" title="Mangák kategóriákra osztva">Kategóriák ></div>
             <div class="section" title="Mindennek a beállítása" onclick="settings()">Beállítások</div>
             <div class="section" title="A profilod">Profil</div>
@@ -66,15 +66,16 @@
             <div class="section">Slice of life</div>
         </div>
         <img src="src/icons/omex-logo-grey-green.png" class="logo" alt="OMEX" onclick="window.location.href = 'index.html';" title="OMEX">
-        <input type="search" placeholder="Keress rá bármire..." title="Keresőmező" class="topnav-search">
+        <input type="search" placeholder="Keress rá bármire..." title="Keresőmező" class="topnav-search" onchange="search(this.value, this)">
         <img class="icon-src" src="src/icons/search.png">
         <img src="src/icons/def-avatar.png" alt="Profile" id="profile" onmousewheel="easterEgg('0')" title="Profil">
     </div><br><br><br><br>
     <div id="navbar-bottom">
         <div id="home" onclick="setTimeout(function(){ if (gotoTop == false) { window.location.href = 'index.html' } else { window.scroll({ top: 0, left: 0, behavior: 'smooth' }); } }, 100)"></div>
         <div id="categ-menu">
-            <div class="section"><input type="search" placeholder="Gyorskeresés..." title="Gyorskeresés"></div>
+            <div class="section"><input type="search" placeholder="Gyorskeresés..." title="Gyorskeresés" onchange="search(this.value, this)"></div>
             <div class="section" onclick="openCategCategMenu()">Kategóriák ></div>
+            <div class="section" onclick="window.location.href = 'index.html';">Főoldal</div>
             <div class="section">Profil</div>
             <div class="section" onclick="settings()">Beállítások</div>
         </div>
@@ -98,9 +99,73 @@
     <div id="fastSearch"><br>
         <div class="X" onclick="document.getElementById('fastSearch').style.display = 'none'; fsDisp = false;">X</div>
         <span>Very secret search bar</span><br>
-        <input type="search" id="search-1" placeholder="Szuper titkos keresőmező" title="Szuper titkos keresőmező">
+        <input type="search" onchange="search(this.value, this)" placeholder="Szuper titkos keresőmező" title="Szuper titkos keresőmező">
     </div>
     <div id="hideNav"></div>
+    <div id="checkmark">
+        <img src="src/images/checkmark.gif" alt="OK" width="100px" height="100px">
+        <span id="checkmark-text"></span>
+    </div>
+    <div class="hidden" id="settings-things">
+        <div id="sidenav">
+            <div class="section" onclick="window.location.href = 'index.html';">Főoldal</div><br>
+
+            <div class="section" onclick="window.location.href = '#s1';">Profil</div>
+            <div class="desection" onclick="window.location.href = '#ds1';">Adatok szerkesztése</div>
+            <div class="desection" onclick="window.location.href = '#ds2';">Adatok mentése</div>
+            <div class="desection" onclick="window.location.href = '#ds3';">Profil és adatok törlése</div><br>
+
+            <div class="section" onclick="window.location.href = '#s2';">Fizetések</div>
+            <div class="desection" onclick="window.location.href = '#ds';">Tranzakciók</div>
+            <div class="desection" onclick="window.location.href = '#ds';">Rangok</div>
+            <div class="desection" onclick="window.location.href = '#ds';">Tagságok</div>
+            <div class="desection" onclick="window.location.href = '#ds';">Előfizetések</div>
+            <div class="desection" onclick="window.location.href = '#ds';">Bolt</div><br>
+
+            <div class="section" onclick="window.location.href = '#s';">Nézet</div>
+            <div class="desection">Oldal</div><br>
+
+            <div class="section">Egyéb</div>
+            <div class="desection">Értesítések</div>
+            <div class="desection">Speciális</div>
+            <div class="desection hidden">Developer</div>
+        </div>
+
+        <div class="settings-text">
+            <h1 id="s1">Profil</h1><br><br>
+            
+            <h2 id="ds1">Adatok szerkesztése</h2><br>
+
+            // Adatok lementése
+
+            <h2 id="ds2">Adatok lementése</h2><br>
+
+            <span>Le akarod menteni az adatokat? Szó se lehet róla! Na jólvan, tessék, itt ez a gomb, ha ezt megnyomod, akkor le tudod menteni a legendás adataidat!</span><br><br>
+
+            <button onclick="saveSave()" class="btn-small">Adatok mentése</button><br><br>
+
+            <span>De hogy lásd, milyen segítőkész vagyok, megmutatom, hogy mit kell tenned, ha nem tudod letölteni a fájlt, vagy nem tudod beimportálni. Nehéz feladat, de ha muszáj... (Meg kell nyomnod ezt a gombot, ami automatikusan kimásolja neked a saját kódodat!)</span><br><br>
+
+            <button onclick="copy('dat')" class="btn-small">Adatok másolása</button><br><br><br>
+            
+            <h3 id="ds3">Profil és adatok törlése</h3><br>
+            
+            <span>Törölni akarod a profilodat? Ok. Szóval 3 lehetőség közül választhatsz: </span><br>
+            
+            <span>1. Teljesen letörlöd a profilt is, meg az adataidat is, így minden elveszik. (Ez előtt azért érdemes csinálni egy <span onclick="saveSave()" class="link ul">mentést a profilodról</span>!)</span><br><br>
+
+            <button id="delpd" class="btn-small">Profil és adatok törlése</button><br><br><br>
+            
+            <span>2. Csak a profilt törlöd, az adatok maradnak, így vissza tudod majd hozni az adataidat az új profilodba.</span><br><br>
+            
+            <button id="delp" class="btn-small">Profil törlése</button><br><br><br>
+
+            
+            <span>3. Csak az adataidat törlöd, így olyan, mintha egy új profilt csinálnál. Minden visszaáll alapállásba. (Ez előtt azért érdemes csinálni egy <span onclick="saveSave()" class="link ul">mentést a profilodról</span>!)</span><br><br>
+            
+            <button id="deld" class="btn-small">Adatok törlése</button><br><br><br>
+        </div>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>

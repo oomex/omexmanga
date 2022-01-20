@@ -624,3 +624,7 @@ input {
     background-size: 100%;
     background-repeat: no-repeat;
 }
+
+.hidden {
+    display: none;
+}
